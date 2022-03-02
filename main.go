@@ -1,7 +1,7 @@
 package main
 
 import (
-	// other imports
+
 	"fmt"
 	"log"
 	"os"
@@ -10,9 +10,8 @@ import (
 	"github.com/dghubble/oauth1"
 )
 
-// Credentials stores all of our access/consumer tokens
-// and secret keys needed for authentication against
-// the twitter REST API.
+// Credentials stores all of our access/consumer tokens and and secret keys needed for authentication against the twitter REST API.
+
 type Credentials struct {
 	ConsumerKey       string
 	ConsumerSecret    string
@@ -20,11 +19,6 @@ type Credentials struct {
 	AccessTokenSecret string
 }
 
-// getClient is a helper function that will return a twitter client
-// that we can subsequently use to send tweets, or to stream new tweets
-// this will take in a pointer to a Credential struct which will contain
-// everything needed to authenticate and return a pointer to a twitter Client
-// or an error
 func getClient(creds *Credentials) (*twitter.Client, error) {
 	// Pass in your consumer key (API Key) and your Consumer Secret (API Secret)
 	config := oauth1.NewConfig(creds.ConsumerKey, creds.ConsumerSecret)
